@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website Icon" type="ico" href="C:\Users\harsh\Downloads\calculate_icon-icons.com_71014.ico">
+    <title>Simple Calculator</title>
+   <style>
+body{
+  background-image: url("C:\\Users\\harsh\\OneDrive\\Desktop\\python\\images\\2660eb9838be92ebf87322ef5ebac3ed.jpg");
+  background-size: 20%;
+}
+  h1{
+      text-align: center;
+      color: white;
+    }
+.calculator {
+    width: 322px;
+    margin: 100px auto;
+    border: 2px solid url("C:\\Users\\harsh\\OneDrive\\Desktop\\python\\images\\2660eb9838be92ebf87322ef5ebac3ed.jpg");
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(143, 143, 143);
+}
+
+.display {
+    width: 298px;
+    height: 40px;
+    font-size: 25px;
+    padding: 10px;
+    border: 1px  solid black ;
+    border-radius: 10px;
+    background-image: url("C:\\Users\\harsh\\OneDrive\\Desktop\\python\\images\\2660eb9838be92ebf87322ef5ebac3ed.jpg");
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 7px;
+}
+
+.buttons button {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 1px  solid black ;
+    border-radius: 10px;
+    background-image: url("C:\\Users\\harsh\\OneDrive\\Desktop\\python\\images\\2660eb9838be92ebf87322ef5ebac3ed.jpg");
+    color:white ;
+}
+.buttons .ans{
+    width: 256px;
+    height: 60px;
+    font-size: 18px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 1px  solid black ;
+}
+.buttons button:hover {
+    background-color: #ddd;
+}
+   </style>
+</head>
+<body>
+  <h1>Calculator</h1>
+    <div class="calculator">
+        <input type="text" class="display" id="result" readonly>
+        <div class="buttons">
+            <button onclick="display('+')">+</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('*')">x</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="clearScreen()">C</button>
+            <button onclick="calculate()" class="ans">=</button>
+        </div>
+    </div>
+    <script>
+        let output = "";
+
+function display(value) {
+  output += value;
+  document.getElementById("result").value = output;
+}
+
+function clearScreen() {
+  output = "";
+  document.getElementById("result").value = output;
+}
+
+function calculate() {
+  try {
+    let result = eval(output);
+    document.getElementById("result").value = result;
+    output = result;
+  } catch (err) {
+    document.getElementById("result").value = "Error";
+    output = "";
+  }
+}
+    </script>
+</body>
+</html>
